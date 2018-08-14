@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {Observable, of} from 'rxjs';
+
 
 import { AppComponent } from './app.component';
+
 
 @NgModule({
   declarations: [

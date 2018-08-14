@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DiceService } from './dice-service.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-strayos';
+  dieRoll = '';
+
+  constructor(private diceGame: DiceService){ }
+
+  ngOnInit() {
+    this.diceGame.messages.subscribe(msg => {
+      this.dieRoll = msg;
+    })
+  }
+
+  rollSingleDie() {
+    this.diceGame.rollSingleDie("Test Message");
+  }
 }
